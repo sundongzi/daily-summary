@@ -24,5 +24,7 @@ ssh-keygen
 
 ##### 3.复制生成的公钥到服务器上面，进入到.ssh里面，然后通过ls查看一下存在文件，然后通过cat进入到.pub的文件拷贝出来放到远程服务器上面
 
+##### 4.然后进入到本地需要关联的文件夹 git push git@github.com:sundongzi/daily-summary.git   ==注意是以git开头的地址==
+
 ##### 详细链接：https://blog.csdn.net/ligang2585116/article/details/79964976
 
