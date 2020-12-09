@@ -20,4 +20,9 @@
 
 ##### 10.reset 清屏，把git bash命令窗口中的所有内容清空。
 
+
+
+Ps：git reset—soft HEAD^ 回退一次commit
+
 ##### 参考路径：https://www.cnblogs.com/yjd_hycf_space/p/7730690.html  （linux命令大全）
+
