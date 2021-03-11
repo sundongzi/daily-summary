@@ -1,5 +1,12 @@
 ### 参考链接：https://juejin.im/post/5adea0106fb9a07a9d6ff6de
 
+#### webpack的[打包原理](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/308)
+
+1. 识别入口文件
+2. 通过逐层识别模块依赖(Commonjs、amd或者es6的import,webpack都会对其进行分析，来获取代码的依赖)
+3. webpack做的就是分析代码、转换代码、编译代码、输出代码
+4. 最终形成打包后的代码
+
 #### 基础：
 
 首先在项目下创建一个webpack.config.js文件来进行配置webpack
