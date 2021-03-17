@@ -1,0 +1,19 @@
+<template><h4 id="一-xmlhttprequest对象"><a class="header-anchor" href="#一-xmlhttprequest对象">#</a> 一.XMLHttpRequest对象</h4>
+<h5 id="_1-创建xhr对象"><a class="header-anchor" href="#_1-创建xhr对象">#</a> 1.创建XHR对象</h5>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">createXhr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 处理兼容问题</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> XMLHttpRequest <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> ActiveXObject <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h5 id="_2-xhr用法"><a class="header-anchor" href="#_2-xhr用法">#</a> 2.xhr用法</h5>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'get/post'</span><span class="token punctuation">,</span><span class="token string">'请求的地址URL'</span><span class="token punctuation">,</span><span class="token string">'是否是异步请求'</span><span class="token punctuation">)</span> <span class="token comment">// 第三个参数为true则表示为异步请求,如果为false则为同步请求，需要等到服务器响应之后在执行剩下的代码</span>
+<span class="token comment">//（1）URL相对于执行代码的当前页面（当然也可以使用绝对路径） </span>
+<span class="token comment">//（2）open()方法并不会真正发送请求，而只是启动一个请求以备发送</span>
+
+xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'请求主体发送的数据'</span><span class="token punctuation">)</span>
+<span class="token comment">//（1）如果不需要通过请求主体发送数据（比如get请求），则必须传入null，因为这个参数对有些浏览器来说是必需的 </span>
+<span class="token comment">//（2）调用send()之后，请求就会被分派到服务器</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></template>
