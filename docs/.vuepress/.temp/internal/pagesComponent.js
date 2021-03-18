@@ -1,6 +1,7 @@
 import { defineAsyncComponent } from 'vue'
 
 export const pagesComponent = {
+  "/": defineAsyncComponent(() => import(/* webpackChunkName: "v-8daa1a0e" */"/Users/sundong/Documents/daily-summary/docs/.vuepress/.temp/pages/README.vue")),
   "/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E9%97%AD%E5%8C%85.html": defineAsyncComponent(() => import(/* webpackChunkName: "v-13720483" */"/Users/sundong/Documents/daily-summary/docs/.vuepress/.temp/pages/你不知道的闭包.vue")),
   "/Css/css.html": defineAsyncComponent(() => import(/* webpackChunkName: "v-93fcd64a" */"/Users/sundong/Documents/daily-summary/docs/.vuepress/.temp/pages/Css/css.vue")),
   "/Css/opacity%20&&%20visibility%20&&%20display.html": defineAsyncComponent(() => import(/* webpackChunkName: "v-60f0c06f" */"/Users/sundong/Documents/daily-summary/docs/.vuepress/.temp/pages/Css/opacity && visibility && display.vue")),

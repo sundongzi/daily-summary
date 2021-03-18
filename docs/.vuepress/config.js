@@ -3,16 +3,12 @@ module.exports = {
    base: '/daily-summary/',
    serviceWorker: true,
    themeConfig: {
-      nav: [
-        {
-            text: '博客学习', 
-            link: '/'
-        }
-      ],
       sidebar: [
          {
-            title: '分组1',
-            path: '/book/'
+            title: '博客学习',
+            children: [
+               '/博客学习/单点登录'
+            ]
          }
       ]
    }
