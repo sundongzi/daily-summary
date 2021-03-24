@@ -2,7 +2,10 @@
 home: true
 tagline: Hero 副标题
 actionText: 马上进入
-actionLink: /book/promise.md
+actionLink: /book/关于回调的一些理解.md
+# actions:
+# - link: /book/关于回调的一些理解.md
+#   text: 马上进入
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。

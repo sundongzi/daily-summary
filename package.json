@@ -8,10 +8,11 @@
   "license": "MIT",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "deploy-gh": "GH=1 yarn docs:build && bash deploy-gh.sh"
+    "docs:build": "vuepress build docs --no-cache",
+    "deploy-gh": "GH=1 yarn docs:build && bash deploy-gh.sh",
+    "get:filefoler": "node ./get-filefolder"
   },
   "devDependencies": {
-    "vuepress": "^2.0.0-alpha.26"
+    "vuepress": "1.8.2"
   }
 }

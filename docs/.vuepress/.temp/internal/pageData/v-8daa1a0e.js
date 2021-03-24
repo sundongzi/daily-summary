@@ -6,8 +6,12 @@ export const data = {
   "frontmatter": {
     "home": true,
     "tagline": "Hero 副标题",
-    "actionText": "马上进入",
-    "actionLink": "/book/promise.md",
+    "actions": [
+      {
+        "link": "/book/关于回调的一些理解.md",
+        "text": "马上进入"
+      }
+    ],
     "features": [
       {
         "title": "简洁至上",
@@ -28,7 +32,18 @@ export const data = {
   "headers": [],
   "filePathRelative": "README.md",
   "git": {
-    "updatedTime": null,
-    "contributors": []
+    "updatedTime": 1616053247000,
+    "contributors": [
+      {
+        "name": "sundong",
+        "email": "sundong@idss-cn.com",
+        "commits": 1
+      }
+    ]
   }
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  __VUE_HMR_RUNTIME__.updatePageData(data)
 }
