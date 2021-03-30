@@ -1,9 +1,9 @@
 {
-  "name": "daily-summary",
+  "name": "dailySummary",
   "version": "1.0.0",
   "description": "日常积累",
   "main": "index.js",
-  "repository": "https://github.com/sundongzi/daily-summary.git",
+  "repository": "https://github.com/sundongzi/dailySummary.git",
   "author": "sundong <sundong@idss-cn.com>",
   "license": "MIT",
   "scripts": {
