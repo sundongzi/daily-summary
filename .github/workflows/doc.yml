@@ -45,11 +45,12 @@ jobs:
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
+        if: success()
         uses: crazy-max/ghaction-github-pages@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTION_SECRETS }}
         with:
           # 部署到 gh-pages 分支
           target_branch: master
           # 部署目录为 VuePress 的默认输出目录
           build_dir: docs/.vuepress/dist
+         env:
+          GITHUB_TOKEN: ${{ secrets.ACTION_SECRETS }}
