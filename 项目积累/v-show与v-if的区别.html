@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1.v-if指的是‘真正的’条件渲染，,因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建.</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/daily-summary/assets/css/0.styles.4a69c2d6.css" as="style"><link rel="preload" href="/daily-summary/assets/js/app.c7a2df99.js" as="script"><link rel="preload" href="/daily-summary/assets/js/2.7bd641e8.js" as="script"><link rel="preload" href="/daily-summary/assets/js/56.01901593.js" as="script"><link rel="prefetch" href="/daily-summary/assets/js/10.bfa0e540.js"><link rel="prefetch" href="/daily-summary/assets/js/11.69174f2e.js"><link rel="prefetch" href="/daily-summary/assets/js/12.6f3c148d.js"><link rel="prefetch" href="/daily-summary/assets/js/13.bd1f20b6.js"><link rel="prefetch" href="/daily-summary/assets/js/14.fa21de0a.js"><link rel="prefetch" href="/daily-summary/assets/js/15.52466731.js"><link rel="prefetch" href="/daily-summary/assets/js/16.61181729.js"><link rel="prefetch" href="/daily-summary/assets/js/17.eefeb574.js"><link rel="prefetch" href="/daily-summary/assets/js/18.9cf33991.js"><link rel="prefetch" href="/daily-summary/assets/js/19.21f91e9c.js"><link rel="prefetch" href="/daily-summary/assets/js/20.82f5d91d.js"><link rel="prefetch" href="/daily-summary/assets/js/21.f6748c86.js"><link rel="prefetch" href="/daily-summary/assets/js/22.2718656f.js"><link rel="prefetch" href="/daily-summary/assets/js/23.a84f9669.js"><link rel="prefetch" href="/daily-summary/assets/js/24.d5bdb95b.js"><link rel="prefetch" href="/daily-summary/assets/js/25.b8e6a6c9.js"><link rel="prefetch" href="/daily-summary/assets/js/26.ce1ec82f.js"><link rel="prefetch" href="/daily-summary/assets/js/27.247a6acf.js"><link rel="prefetch" href="/daily-summary/assets/js/28.2b76edbe.js"><link rel="prefetch" href="/daily-summary/assets/js/29.9e3ed517.js"><link rel="prefetch" href="/daily-summary/assets/js/3.94e81bfd.js"><link rel="prefetch" href="/daily-summary/assets/js/30.b9ad3c6a.js"><link rel="prefetch" href="/daily-summary/assets/js/31.cd0df206.js"><link rel="prefetch" href="/daily-summary/assets/js/32.03bd502d.js"><link rel="prefetch" href="/daily-summary/assets/js/33.52a7f70b.js"><link rel="prefetch" href="/daily-summary/assets/js/34.f3247115.js"><link rel="prefetch" href="/daily-summary/assets/js/35.392ec92d.js"><link rel="prefetch" href="/daily-summary/assets/js/36.c4a40819.js"><link rel="prefetch" href="/daily-summary/assets/js/37.3628dceb.js"><link rel="prefetch" href="/daily-summary/assets/js/38.b8c2fbca.js"><link rel="prefetch" href="/daily-summary/assets/js/39.f18d3714.js"><link rel="prefetch" href="/daily-summary/assets/js/4.e05c873c.js"><link rel="prefetch" href="/daily-summary/assets/js/40.6764fb0c.js"><link rel="prefetch" href="/daily-summary/assets/js/41.8b905096.js"><link rel="prefetch" href="/daily-summary/assets/js/42.16f39d87.js"><link rel="prefetch" href="/daily-summary/assets/js/43.f8176a56.js"><link rel="prefetch" href="/daily-summary/assets/js/44.e2fb89b6.js"><link rel="prefetch" href="/daily-summary/assets/js/45.e89b7858.js"><link rel="prefetch" href="/daily-summary/assets/js/46.98678466.js"><link rel="prefetch" href="/daily-summary/assets/js/47.70a754d7.js"><link rel="prefetch" href="/daily-summary/assets/js/48.6bc9aec4.js"><link rel="prefetch" href="/daily-summary/assets/js/49.f20d818a.js"><link rel="prefetch" href="/daily-summary/assets/js/5.f3e6ed41.js"><link rel="prefetch" href="/daily-summary/assets/js/50.31658c04.js"><link rel="prefetch" href="/daily-summary/assets/js/51.7f61d8b3.js"><link rel="prefetch" href="/daily-summary/assets/js/52.fb25e07f.js"><link rel="prefetch" href="/daily-summary/assets/js/53.c97d9827.js"><link rel="prefetch" href="/daily-summary/assets/js/54.eb09470d.js"><link rel="prefetch" href="/daily-summary/assets/js/55.de300e85.js"><link rel="prefetch" href="/daily-summary/assets/js/57.e20c557a.js"><link rel="prefetch" href="/daily-summary/assets/js/58.077c437e.js"><link rel="prefetch" href="/daily-summary/assets/js/6.498ab014.js"><link rel="prefetch" href="/daily-summary/assets/js/7.bce0cae8.js"><link rel="prefetch" href="/daily-summary/assets/js/8.9c6b084c.js"><link rel="prefetch" href="/daily-summary/assets/js/9.2c1525c1.js">
+    <link rel="stylesheet" href="/daily-summary/assets/css/0.styles.4a69c2d6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/daily-summary/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/daily-summary/Css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/daily-summary/Immutable/" class="nav-link">
+  Immutable
+</a></div><div class="nav-item"><a href="/daily-summary/VUE/" class="nav-link">
+  VUE
+</a></div><div class="nav-item"><a href="/daily-summary/book/" class="nav-link">
+  book
+</a></div><div class="nav-item"><a href="/daily-summary/git/" class="nav-link">
+  git
+</a></div><div class="nav-item"><a href="/daily-summary/vscode/" class="nav-link">
+  vscode
+</a></div><div class="nav-item"><a href="/daily-summary/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/daily-summary/前端安全知识总结/" class="nav-link">
+  前端安全知识总结
+</a></div><div class="nav-item"><a href="/daily-summary/博客学习/" class="nav-link">
+  博客学习
+</a></div><div class="nav-item"><a href="/daily-summary/小技巧/" class="nav-link">
+  小技巧
+</a></div><div class="nav-item"><a href="/daily-summary/算法/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/daily-summary/设计模式/" class="nav-link">
+  设计模式
+</a></div><div class="nav-item"><a href="/daily-summary/项目积累/" class="nav-link">
+  项目积累
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/daily-summary/Css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/daily-summary/Immutable/" class="nav-link">
+  Immutable
+</a></div><div class="nav-item"><a href="/daily-summary/VUE/" class="nav-link">
+  VUE
+</a></div><div class="nav-item"><a href="/daily-summary/book/" class="nav-link">
+  book
+</a></div><div class="nav-item"><a href="/daily-summary/git/" class="nav-link">
+  git
+</a></div><div class="nav-item"><a href="/daily-summary/vscode/" class="nav-link">
+  vscode
+</a></div><div class="nav-item"><a href="/daily-summary/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/daily-summary/前端安全知识总结/" class="nav-link">
+  前端安全知识总结
+</a></div><div class="nav-item"><a href="/daily-summary/博客学习/" class="nav-link">
+  博客学习
+</a></div><div class="nav-item"><a href="/daily-summary/小技巧/" class="nav-link">
+  小技巧
+</a></div><div class="nav-item"><a href="/daily-summary/算法/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/daily-summary/设计模式/" class="nav-link">
+  设计模式
+</a></div><div class="nav-item"><a href="/daily-summary/项目积累/" class="nav-link">
+  项目积累
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h5 id="_1-v-if指的是-真正的-条件渲染-因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建"><a href="#_1-v-if指的是-真正的-条件渲染-因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建" class="header-anchor">#</a> 1.v-if指的是‘真正的’条件渲染，,因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建.</h5> <h5 id="_2-v-if-也是惰性的-如果在初始渲染时条件为假-那么什么都不做-直到条件第一次为真的时候才会开始渲染条件块"><a href="#_2-v-if-也是惰性的-如果在初始渲染时条件为假-那么什么都不做-直到条件第一次为真的时候才会开始渲染条件块" class="header-anchor">#</a> 2.v-if 也是惰性的,==如果在初始渲染时条件为假,那么什么都不做== - - 直到条件第一次为真的时候才会开始渲染条件块</h5> <h5 id="v-show就简单得多-不管初始条件是什么-元素总会被渲染-并且只是简单的基于css进行切换"><a href="#v-show就简单得多-不管初始条件是什么-元素总会被渲染-并且只是简单的基于css进行切换" class="header-anchor">#</a> v-show就简单得多- - 不管初始条件是什么,==元素总会被渲染,并且只是简单的基于css进行切换.==</h5> <h5 id="参考链接-https-blog-csdn-net-jian-xi-article-details-68486836"><a href="#参考链接-https-blog-csdn-net-jian-xi-article-details-68486836" class="header-anchor">#</a> 参考链接：https://blog.csdn.net/jian_xi/article/details/68486836</h5></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/daily-summary/assets/js/app.c7a2df99.js" defer></script><script src="/daily-summary/assets/js/2.7bd641e8.js" defer></script><script src="/daily-summary/assets/js/56.01901593.js" defer></script>
+  </body>
+</html>

@@ -1,4 +1,0 @@
-<template><h4 id="如何想让本地新建的分支对应远程已存在的一个分支"><a class="header-anchor" href="#如何想让本地新建的分支对应远程已存在的一个分支">#</a> 如何想让本地新建的分支对应远程已存在的一个分支？</h4>
-<h5 id="假如远程分支有master、insight两个分支-本地只存在master-如果想在本地建一个insight分支并且与远程的insight分支关联起来-可以使用-git-checkout-b-insight-origin-insight"><a class="header-anchor" href="#假如远程分支有master、insight两个分支-本地只存在master-如果想在本地建一个insight分支并且与远程的insight分支关联起来-可以使用-git-checkout-b-insight-origin-insight">#</a> 假如远程分支有master、insight两个分支,本地只存在master,如果想在本地建一个insight分支并且与远程的insight分支关联起来   可以使用:==git checkout -b insight origin/insight</h5>
-<p>参考链接:(https://www.cnblogs.com/hamsterPP/p/6810831.html)</p>
-</template>

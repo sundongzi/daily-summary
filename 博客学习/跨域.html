@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>跨域：即协议不同或者域名不同或者端口不同  也就是所谓的同源策略</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/daily-summary/assets/css/0.styles.4a69c2d6.css" as="style"><link rel="preload" href="/daily-summary/assets/js/app.c7a2df99.js" as="script"><link rel="preload" href="/daily-summary/assets/js/2.7bd641e8.js" as="script"><link rel="preload" href="/daily-summary/assets/js/47.70a754d7.js" as="script"><link rel="prefetch" href="/daily-summary/assets/js/10.bfa0e540.js"><link rel="prefetch" href="/daily-summary/assets/js/11.69174f2e.js"><link rel="prefetch" href="/daily-summary/assets/js/12.6f3c148d.js"><link rel="prefetch" href="/daily-summary/assets/js/13.bd1f20b6.js"><link rel="prefetch" href="/daily-summary/assets/js/14.fa21de0a.js"><link rel="prefetch" href="/daily-summary/assets/js/15.52466731.js"><link rel="prefetch" href="/daily-summary/assets/js/16.61181729.js"><link rel="prefetch" href="/daily-summary/assets/js/17.eefeb574.js"><link rel="prefetch" href="/daily-summary/assets/js/18.9cf33991.js"><link rel="prefetch" href="/daily-summary/assets/js/19.21f91e9c.js"><link rel="prefetch" href="/daily-summary/assets/js/20.82f5d91d.js"><link rel="prefetch" href="/daily-summary/assets/js/21.f6748c86.js"><link rel="prefetch" href="/daily-summary/assets/js/22.2718656f.js"><link rel="prefetch" href="/daily-summary/assets/js/23.a84f9669.js"><link rel="prefetch" href="/daily-summary/assets/js/24.d5bdb95b.js"><link rel="prefetch" href="/daily-summary/assets/js/25.b8e6a6c9.js"><link rel="prefetch" href="/daily-summary/assets/js/26.ce1ec82f.js"><link rel="prefetch" href="/daily-summary/assets/js/27.247a6acf.js"><link rel="prefetch" href="/daily-summary/assets/js/28.2b76edbe.js"><link rel="prefetch" href="/daily-summary/assets/js/29.9e3ed517.js"><link rel="prefetch" href="/daily-summary/assets/js/3.94e81bfd.js"><link rel="prefetch" href="/daily-summary/assets/js/30.b9ad3c6a.js"><link rel="prefetch" href="/daily-summary/assets/js/31.cd0df206.js"><link rel="prefetch" href="/daily-summary/assets/js/32.03bd502d.js"><link rel="prefetch" href="/daily-summary/assets/js/33.52a7f70b.js"><link rel="prefetch" href="/daily-summary/assets/js/34.f3247115.js"><link rel="prefetch" href="/daily-summary/assets/js/35.392ec92d.js"><link rel="prefetch" href="/daily-summary/assets/js/36.c4a40819.js"><link rel="prefetch" href="/daily-summary/assets/js/37.3628dceb.js"><link rel="prefetch" href="/daily-summary/assets/js/38.b8c2fbca.js"><link rel="prefetch" href="/daily-summary/assets/js/39.f18d3714.js"><link rel="prefetch" href="/daily-summary/assets/js/4.e05c873c.js"><link rel="prefetch" href="/daily-summary/assets/js/40.6764fb0c.js"><link rel="prefetch" href="/daily-summary/assets/js/41.8b905096.js"><link rel="prefetch" href="/daily-summary/assets/js/42.16f39d87.js"><link rel="prefetch" href="/daily-summary/assets/js/43.f8176a56.js"><link rel="prefetch" href="/daily-summary/assets/js/44.e2fb89b6.js"><link rel="prefetch" href="/daily-summary/assets/js/45.e89b7858.js"><link rel="prefetch" href="/daily-summary/assets/js/46.98678466.js"><link rel="prefetch" href="/daily-summary/assets/js/48.6bc9aec4.js"><link rel="prefetch" href="/daily-summary/assets/js/49.f20d818a.js"><link rel="prefetch" href="/daily-summary/assets/js/5.f3e6ed41.js"><link rel="prefetch" href="/daily-summary/assets/js/50.31658c04.js"><link rel="prefetch" href="/daily-summary/assets/js/51.7f61d8b3.js"><link rel="prefetch" href="/daily-summary/assets/js/52.fb25e07f.js"><link rel="prefetch" href="/daily-summary/assets/js/53.c97d9827.js"><link rel="prefetch" href="/daily-summary/assets/js/54.eb09470d.js"><link rel="prefetch" href="/daily-summary/assets/js/55.de300e85.js"><link rel="prefetch" href="/daily-summary/assets/js/56.01901593.js"><link rel="prefetch" href="/daily-summary/assets/js/57.e20c557a.js"><link rel="prefetch" href="/daily-summary/assets/js/58.077c437e.js"><link rel="prefetch" href="/daily-summary/assets/js/6.498ab014.js"><link rel="prefetch" href="/daily-summary/assets/js/7.bce0cae8.js"><link rel="prefetch" href="/daily-summary/assets/js/8.9c6b084c.js"><link rel="prefetch" href="/daily-summary/assets/js/9.2c1525c1.js">
+    <link rel="stylesheet" href="/daily-summary/assets/css/0.styles.4a69c2d6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/daily-summary/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/daily-summary/Css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/daily-summary/Immutable/" class="nav-link">
+  Immutable
+</a></div><div class="nav-item"><a href="/daily-summary/VUE/" class="nav-link">
+  VUE
+</a></div><div class="nav-item"><a href="/daily-summary/book/" class="nav-link">
+  book
+</a></div><div class="nav-item"><a href="/daily-summary/git/" class="nav-link">
+  git
+</a></div><div class="nav-item"><a href="/daily-summary/vscode/" class="nav-link">
+  vscode
+</a></div><div class="nav-item"><a href="/daily-summary/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/daily-summary/前端安全知识总结/" class="nav-link">
+  前端安全知识总结
+</a></div><div class="nav-item"><a href="/daily-summary/博客学习/" class="nav-link">
+  博客学习
+</a></div><div class="nav-item"><a href="/daily-summary/小技巧/" class="nav-link">
+  小技巧
+</a></div><div class="nav-item"><a href="/daily-summary/算法/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/daily-summary/设计模式/" class="nav-link">
+  设计模式
+</a></div><div class="nav-item"><a href="/daily-summary/项目积累/" class="nav-link">
+  项目积累
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/daily-summary/Css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/daily-summary/Immutable/" class="nav-link">
+  Immutable
+</a></div><div class="nav-item"><a href="/daily-summary/VUE/" class="nav-link">
+  VUE
+</a></div><div class="nav-item"><a href="/daily-summary/book/" class="nav-link">
+  book
+</a></div><div class="nav-item"><a href="/daily-summary/git/" class="nav-link">
+  git
+</a></div><div class="nav-item"><a href="/daily-summary/vscode/" class="nav-link">
+  vscode
+</a></div><div class="nav-item"><a href="/daily-summary/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/daily-summary/前端安全知识总结/" class="nav-link">
+  前端安全知识总结
+</a></div><div class="nav-item"><a href="/daily-summary/博客学习/" class="nav-link">
+  博客学习
+</a></div><div class="nav-item"><a href="/daily-summary/小技巧/" class="nav-link">
+  小技巧
+</a></div><div class="nav-item"><a href="/daily-summary/算法/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/daily-summary/设计模式/" class="nav-link">
+  设计模式
+</a></div><div class="nav-item"><a href="/daily-summary/项目积累/" class="nav-link">
+  项目积累
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/daily-summary/博客学习/Https加密.html" class="sidebar-link">Https加密</a></li><li><a href="/daily-summary/博客学习/XMLHttpRequest对象.html" class="sidebar-link">XMLHttpRequest对象</a></li><li><a href="/daily-summary/博客学习/canvas.html" class="sidebar-link">canvas</a></li><li><a href="/daily-summary/博客学习/chrome-extension.html" class="sidebar-link">chrome-extension</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/daily-summary/博客学习/es6.html" class="sidebar-link">es6</a></li><li><a href="/daily-summary/博客学习/http与https.html" class="sidebar-link">http与https</a></li><li><a href="/daily-summary/博客学习/http常用方法.html" class="sidebar-link">http常用方法</a></li><li><a href="/daily-summary/博客学习/vue数据双向绑定.html" class="sidebar-link">vue数据双向绑定</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/daily-summary/博客学习/前后端分离.html" class="sidebar-link">前后端分离</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/daily-summary/博客学习/前端代理方式.html" class="sidebar-link">前端代理方式</a></li><li><a href="/daily-summary/博客学习/单点登录.html" class="sidebar-link">单点登录</a></li><li><a href="/daily-summary/博客学习/原型到原型链.html" class="sidebar-link">原型到原型链</a></li><li><a href="/daily-summary/博客学习/数字格式化.html" class="sidebar-link">数字格式化</a></li><li><a href="/daily-summary/博客学习/浏览器缓存.html" class="sidebar-link">浏览器缓存</a></li><li><a href="/daily-summary/博客学习/类型检测方法总结.html" class="sidebar-link">类型检测方法总结</a></li><li><a href="/daily-summary/博客学习/节流与防抖.html" class="sidebar-link">节流与防抖</a></li><li><a href="/daily-summary/博客学习/跨域.html" class="active sidebar-link">跨域</a></li><li><a href="/daily-summary/博客学习/重定向 &amp;&amp; 转发.html" class="sidebar-link">重定向 &amp;&amp; 转发</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h4 id="跨域-即协议不同或者域名不同或者端口不同-也就是所谓的同源策略"><a href="#跨域-即协议不同或者域名不同或者端口不同-也就是所谓的同源策略" class="header-anchor">#</a> 跨域：即协议不同或者域名不同或者端口不同  也就是所谓的同源策略</h4> <h5 id="_1-图片ping"><a href="#_1-图片ping" class="header-anchor">#</a> 1.图片ping</h5> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+img<span class="token punctuation">.</span>scr<span class="token operator">=</span><span class="token string">&quot;http://192.158.39/3;imagg.png&quot;</span>  <span class="token comment">// 加载其他地方的图片</span>
+img<span class="token punctuation">.</span><span class="token function-variable function">onerror</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'失败'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+img<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'成功'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+以上会打印出<span class="token string">'成功'</span>
+</code></pre></div><h5 id="缺点-使用图片ping跨域只能发送-get-请求-并且不能访问响应的文本-只能监听是否响应而已-可以用来追踪广告点击。"><a href="#缺点-使用图片ping跨域只能发送-get-请求-并且不能访问响应的文本-只能监听是否响应而已-可以用来追踪广告点击。" class="header-anchor">#</a> 缺点：使用图片ping跨域只能发送==get==请求，并且不能访问响应的文本，只能监听是否响应而已，可以用来追踪广告点击。</h5> <h4 id="_2-jsonp-jsonp是带有回调函数callback的json"><a href="#_2-jsonp-jsonp是带有回调函数callback的json" class="header-anchor">#</a> 2.jsonp  jsonp是带有回调函数callback的json</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code> <span class="token comment">//回调函数</span>
+ <span class="token keyword">function</span> <span class="token function">showData</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//json对象转成字符串</span>
+   <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;#text&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+  <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;#btn&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">//向头部输入一个脚本，该脚本发起一个跨域请求</span>
+      <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;head&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;script src='http://localhost:9090/student?callback=showData'&gt;&lt;\/script&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// jquery 的jsonp请求</span>
+<span class="token keyword">function</span> <span class="token function">showData</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;调用showData&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;#text&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;#btn&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      url<span class="token operator">:</span> <span class="token string">&quot;http://localhost:9090/student&quot;</span><span class="token punctuation">,</span>
+      type<span class="token operator">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+      dataType<span class="token operator">:</span> <span class="token string">&quot;jsonp&quot;</span><span class="token punctuation">,</span>  <span class="token comment">//指定服务器返回的数据类型</span>
+      jsonp<span class="token operator">:</span><span class="token string">&quot;theFn&quot;</span><span class="token punctuation">,</span>      <span class="token comment">// 指定参数名称，这样后台接受的参数就不再是showData而是theFn 类似:String callback = request.getParameter(&quot;theFunction&quot;);</span>
+      jsonpCallback<span class="token operator">:</span> <span class="token string">&quot;showData&quot;</span><span class="token punctuation">,</span>  <span class="token comment">//指定回调函数名称</span>
+      <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;调用success&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h5 id="缺点-因此使用jsonp时也只能使用-get-方式发起跨域请求。跨域请求需要服务端配合-设置-callback-才能完成跨域请求。"><a href="#缺点-因此使用jsonp时也只能使用-get-方式发起跨域请求。跨域请求需要服务端配合-设置-callback-才能完成跨域请求。" class="header-anchor">#</a> 缺点：因此使用jsonp时也只能使用==GET==方式发起跨域请求。跨域请求需要服务端配合，设置==callback==，才能完成跨域请求。</h5> <h4 id="_3-cors-跨资源共享"><a href="#_3-cors-跨资源共享" class="header-anchor">#</a> 3.CORS 跨资源共享</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token constant">HTTP</span> Header
+Request header<span class="token operator">:</span>
+Origin头在跨域请求或预先请求中，标明发起跨域请求的源域名。
+Access<span class="token operator">-</span>Control<span class="token operator">-</span>Request<span class="token operator">-</span>Method头用于表明跨域请求使用的实际<span class="token constant">HTTP</span>方法
+Access<span class="token operator">-</span>Control<span class="token operator">-</span>Request<span class="token operator">-</span>Headers用于在预先请求时，告知服务器要发起的跨域请求中会携带的请求头信息
+
+Response header<span class="token operator">:</span>
+Access<span class="token operator">-</span>Control<span class="token operator">-</span>Allow<span class="token operator">-</span>Origin<span class="token operator">:</span> <span class="token operator">*</span>  <span class="token comment">// Access-Control-Allow-Origin头中携带了服务器端验证后的允许的跨域请求域名，可以是一个具体的域名或是一个*（表示任意域名）。简单请求时，浏览器会根据此响应头的内容决定是否给脚本返回相应内容，预先验证请求时，浏览器会根据此响应头决定是否发送实际的跨域请求。</span>
+Access<span class="token operator">-</span>Control<span class="token operator">-</span>Allow<span class="token operator">-</span>Methods<span class="token operator">:</span> <span class="token constant">POST</span><span class="token punctuation">,</span> <span class="token constant">GET</span><span class="token punctuation">,</span> <span class="token constant">OPTIONS</span> <span class="token comment">// Access-Control-Allow-Methods用于告知浏览器可以在实际发送跨域请求时，可以支持的请求方法，可以是一个具体的方法列表或是一个*（表示任意方法）。简单请求时，浏览器会根据此响应头的内容决定是否给脚本返回相应内容，预先验证请求时，浏览器会根据此响应头决定是否发送实际的跨域请求</span>
+Access<span class="token operator">-</span>Control<span class="token operator">-</span>Expose<span class="token operator">-</span>Headers头用于允许返回给跨域请求的响应头列表，在列表中的响应头的内容，才可以被浏览器访问。
+Access<span class="token operator">-</span>Control<span class="token operator">-</span>Allow<span class="token operator">-</span>Credentials<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>   <span class="token comment">// Access-Control-Allow-Credentials用于告知浏览器当withCredentials属性设置为true时，是否可以显示跨域请求返回的内容。简单请求时，浏览器会根据此响应头决定是否显示响应的内容。预先验证请求时，浏览器会根据此响应头决定在发送实际跨域请求时，是否携带认证信息。</span>
+Access<span class="token operator">-</span>Control<span class="token operator">-</span>Allow<span class="token operator">-</span>Headers<span class="token operator">:</span> <span class="token constant">X</span><span class="token operator">-</span><span class="token constant">PINGOTHER</span><span class="token punctuation">,</span> Content<span class="token operator">-</span>Type  <span class="token comment">// Access-Control-Allow-Headers用于告知浏览器可以在实际发送跨域请求时，可以支持的请求头，可以是一个具体的请求头列表或是一个*（表示任意请求头）。简单请求时，浏览器会根据此响应头的内容决定是否给脚本返回相应内容，预先验证请求时，浏览器会根据此响应头决定是否发送实际的跨域请求。 </span>
+Access<span class="token operator">-</span>Control<span class="token operator">-</span>Max<span class="token operator">-</span>Age<span class="token operator">:</span> <span class="token number">86400</span>
+</code></pre></div><h4 id="所谓的简单请求与复杂请求"><a href="#所谓的简单请求与复杂请求" class="header-anchor">#</a> 所谓的简单请求与复杂请求</h4> <h5 id="简单请求"><a href="#简单请求" class="header-anchor">#</a> 简单请求</h5> <ol><li><h5 id="使用方法在get-options-post之一"><a href="#使用方法在get-options-post之一" class="header-anchor">#</a> 使用方法在GET  OPTIONS POST之一</h5></li> <li><h5 id="http头信息不超过以下几种字段accept"><a href="#http头信息不超过以下几种字段accept" class="header-anchor">#</a> Http头信息不超过以下几种字段Accept</h5> <p>Accept-Language</p> <p>Content-Language</p> <p>Content-Type:值属于下列之一:</p> <ul><li><code>application/x-www-form-urlencoded</code></li> <li><code>multipart/form-data</code></li> <li><code>text/plain</code></li></ul></li></ol> <h5 id="_3-浏览器与服务器之间只请求了一次"><a href="#_3-浏览器与服务器之间只请求了一次" class="header-anchor">#</a> 3.浏览器与服务器之间只请求了一次</h5> <h5 id="复杂请求-不满足简单请求条件的请求则要先进行预检请求-即使用-options方法发起一个预检请求-到服务器-已获知服务器是否允许该实际请求。"><a href="#复杂请求-不满足简单请求条件的请求则要先进行预检请求-即使用-options方法发起一个预检请求-到服务器-已获知服务器是否允许该实际请求。" class="header-anchor">#</a> 复杂请求：不满足简单请求条件的请求则要先进行预检请求，即使用==OPTIONS方法发起一个预检请求==到服务器，已获知服务器是否允许该实际请求。</h5> <h5 id="如何发送一个想携带cookie或者token的请求"><a href="#如何发送一个想携带cookie或者token的请求" class="header-anchor">#</a> 如何发送一个想携带cookie或者token的请求</h5> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 注意：服务器端 Access-Control-Allow-Credentials = true时，参数Access-Control-Allow-Origin 的值不能为 '*' 。</span>
+<span class="token keyword">function</span> <span class="token function">createCORSRequest</span><span class="token punctuation">(</span><span class="token parameter">method<span class="token punctuation">,</span> url</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    xhr<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>status <span class="token operator">&gt;=</span> <span class="token number">200</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">&lt;</span> <span class="token number">300</span><span class="token punctuation">)</span> <span class="token operator">||</span> xhr <span class="token operator">==</span> <span class="token number">304</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Request was unsuccessful: '</span> <span class="token operator">+</span> xhr<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>ex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">'withCredentials'</span> <span class="token keyword">in</span> xhr<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// 判断时候用withCredentials</span>
+        xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span>url<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> XDomainRequest <span class="token operator">!=</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XDomainRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        xhr <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> xhr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 使用jquery</span>
+$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  url<span class="token operator">:</span><span class="token string">'http://192.168.0.22:9000/content'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span>data<span class="token punctuation">,</span>
+  dataType<span class="token operator">:</span><span class="token string">'json'</span><span class="token punctuation">,</span>
+  contentType<span class="token operator">:</span><span class="token string">'application/json'</span><span class="token punctuation">,</span>
+  type<span class="token operator">:</span><span class="token string">'POST'</span><span class="token punctuation">,</span>
+  xhrFields<span class="token operator">:</span> <span class="token punctuation">{</span>
+    withCredentials<span class="token operator">:</span> <span class="token boolean">true</span>  <span class="token comment">// 表示发送Ajax时，Request header中便会带上 Cookie 信息。</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 服务器端也要做相应的调整</span>
+ response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Credentials&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;true&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="_4-window-name-iframe"><a href="#_4-window-name-iframe" class="header-anchor">#</a> 4.window.name  + iframe</h4> <h5 id="window对象有一个name属性-该属性有一个特征-即在一个窗口的生命周期内-窗口载入的所有的页面都是共享一个window-name的-每一个页面对window-name都有读写的权限-window-name是持久的存在于一个窗口载入的所有页面中的-并不会因为新的页面的载入而被重置。"><a href="#window对象有一个name属性-该属性有一个特征-即在一个窗口的生命周期内-窗口载入的所有的页面都是共享一个window-name的-每一个页面对window-name都有读写的权限-window-name是持久的存在于一个窗口载入的所有页面中的-并不会因为新的页面的载入而被重置。" class="header-anchor">#</a> window对象有一个name属性，该属性有一个特征：即在一个窗口的生命周期内，窗口载入的所有的页面都是共享一个window.name的，每一个页面对window.name都有读写的权限，window.name是持久的存在于一个窗口载入的所有页面中的，并不会因为新的页面的载入而被重置。</h5> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// a.html</span>
+window<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'我是window设置的name值'</span>   <span class="token comment">// window.name的值只能是字符串的形式，这个字符串的大小最大只能允许2M左右，具体取决于不同的浏览器，但是一般是够用了。</span>
+<span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    window<span class="token punctuation">.</span>location <span class="token operator">=</span> <span class="token string">'b.html'</span>  <span class="token comment">// 跳转到b页面</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// b.html</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>name<span class="token punctuation">)</span>  <span class="token comment">// 我是window设置的name值</span>
+
+<span class="token comment">// 以上发生了页面跳转</span>
+</code></pre></div><h5 id="如果页面不跳转-如何通过window-name跨域获取数据"><a href="#如果页面不跳转-如何通过window-name跨域获取数据" class="header-anchor">#</a> 如果页面不跳转，如何通过window.name跨域获取数据</h5> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">//  比如有一个www.example.com/a.html页面。需要通过a.html页面里的js来获取另一个位于不同域上的页面www.cnblogs.com/data.html中的数据。</span>
+<span class="token comment">// 具体的实现方法就是:a.html页面中使用一个隐藏的iframe来充当一个中间角色，由iframe去获取data.html的数据，然后a.html再去得到iframe获取到的数据。</span>
+
+<span class="token comment">// www.test.com下的a.html</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>button id<span class="token operator">=</span><span class="token string">&quot;btn&quot;</span><span class="token operator">&gt;</span>点击<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">var</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'#btn'</span><span class="token punctuation">)</span>
+btn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> iframe <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'iframe'</span><span class="token punctuation">)</span>
+  iframe<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span>
+  iframe<span class="token punctuation">.</span>src<span class="token operator">=</span><span class="token string">&quot;www.cnblogs.com/data.html&quot;</span><span class="token operator">+</span><span class="token string">&quot;?name=sundong&quot;</span>
+  <span class="token keyword">var</span> body<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;body&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>inf<span class="token punctuation">)</span><span class="token punctuation">;</span>                          <span class="token comment">//引入a页面</span>
+
+  iframe<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    iframe<span class="token punctuation">.</span>src<span class="token operator">=</span><span class="token string">'http://www.test.com/kongbai.html'</span>       <span class="token comment">//iframe加载完成，加载www.test.com域下边的空白页kongbai.html</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>iframe<span class="token punctuation">.</span>contentWindow<span class="token punctuation">.</span>name<span class="token punctuation">)</span>        <span class="token comment">//输出window.name中的数据</span>
+    body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>iframe<span class="token punctuation">)</span>                      <span class="token comment">//清除iframe</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+
+
+<span class="token comment">// data.html</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">//获取url中携带的参数值</span>
+$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token operator">:</span><span class="token string">&quot;get&quot;</span><span class="token punctuation">,</span>
+  url<span class="token operator">:</span><span class="token string">&quot;http://www.domain.com/a.php&quot;</span><span class="token operator">+</span><span class="token string">&quot;?m=&quot;</span><span class="token operator">+</span>str<span class="token punctuation">,</span> <span class="token comment">//通过ajax将查询参数传给php页面</span>
+  async<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">success</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    window<span class="token punctuation">.</span>name<span class="token operator">=</span>res                         <span class="token comment">//将接收到的查询数据赋值给window.name</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">error</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    window<span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">'error'</span>                      
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="_5-window-postmessage-data-origin"><a href="#_5-window-postmessage-data-origin" class="header-anchor">#</a> 5.window.postMessage(data.origin)</h4> <h5 id="data-要传递的数据-在传递的时候需要通过json-stringify-进行序列化"><a href="#data-要传递的数据-在传递的时候需要通过json-stringify-进行序列化" class="header-anchor">#</a> data:==要传递的数据，在传递的时候需要通过JSON.stringify()进行序列化==</h5> <h5 id="origin-字符串参数-指明目标窗口的源-协议-主机-端口号-url-url会被忽略-所以可以不写-这个参数是为了安全考虑-postmessage-方法只会将message传递给指定窗口-当然如果愿意也可以建参数设置为-这样可以传递给任意窗口-如果要指定和当前窗口同源的话设置为-。"><a href="#origin-字符串参数-指明目标窗口的源-协议-主机-端口号-url-url会被忽略-所以可以不写-这个参数是为了安全考虑-postmessage-方法只会将message传递给指定窗口-当然如果愿意也可以建参数设置为-这样可以传递给任意窗口-如果要指定和当前窗口同源的话设置为-。" class="header-anchor">#</a> origin：字符串参数，指明目标窗口的源，协议+主机+端口号[+URL]，URL会被忽略，所以可以不写，这个参数是为了安全考虑，postMessage()方法只会将message传递给指定窗口，当然如果愿意也可以建参数设置为&quot;*&quot;，这样可以传递给任意窗口，如果要指定和当前窗口同源的话设置为&quot;/&quot;。</h5> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 在父框架页面index.html发送obj对象给远程服务器的wozien.com/test/b.html，该页面是通过iframe加载的，如下</span>
+
+<span class="token comment">// index.html</span>
+<span class="token operator">&lt;</span>iframe id<span class="token operator">=</span><span class="token string">&quot;proxy&quot;</span> src<span class="token operator">=</span><span class="token string">&quot;http://wozien.com/test/b.html&quot;</span> onload <span class="token operator">=</span> <span class="token string">&quot;postMsg()&quot;</span> style<span class="token operator">=</span><span class="token string">&quot;display: none&quot;</span> <span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>iframe<span class="token operator">&gt;</span>  
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">&quot;text/javascript&quot;</span><span class="token operator">&gt;</span>  
+  <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>  
+    msg<span class="token operator">:</span> <span class="token string">'this is come from client message!'</span>  
+  <span class="token punctuation">}</span>  
+
+<span class="token keyword">function</span> <span class="token function">postMsg</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+  <span class="token keyword">var</span> iframe <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'proxy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  <span class="token keyword">var</span> win <span class="token operator">=</span> iframe<span class="token punctuation">.</span>contentWindow<span class="token punctuation">;</span>  
+  win<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token string">'http://wozien.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>  
+
+<span class="token comment">// 在远程页面b.html中监听message事件，先通过origin属性判断下数据来源的域是否可信任，加强安全措施。具体代码如下：</span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">&quot;text/javascript&quot;</span><span class="token operator">&gt;</span>  
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>origin <span class="token operator">!==</span> <span class="token string">'http://localhost'</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>  
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>origin<span class="token operator">+</span><span class="token string">' '</span><span class="token operator">+</span>event<span class="token punctuation">.</span>data<span class="token punctuation">.</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>  
+</code></pre></div><h4 id="_6-修改document-domain跨子域"><a href="#_6-修改document-domain跨子域" class="header-anchor">#</a> 6.修改document.domain跨子域</h4> <p><strong>前提条件：==这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域，所以只能跨子域==</strong></p> <h5 id="在根域范围内-允许把domain属性的值设置为它的上一级域。例如-在-aaa-xxx-com-域内-可以把domain设置为-xxx-com-但不能设置为-xxx-org-或者-com-。"><a href="#在根域范围内-允许把domain属性的值设置为它的上一级域。例如-在-aaa-xxx-com-域内-可以把domain设置为-xxx-com-但不能设置为-xxx-org-或者-com-。" class="header-anchor">#</a> 在<a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIEffectiveTLDService#getBaseDomain.28.29" target="_blank" rel="noopener noreferrer">根域<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>范围内，允许把domain属性的值设置为它的上一级域。例如，在”aaa.xxx.com”域内，可以把domain设置为 “xxx.com” 但不能设置为 “xxx.org” 或者”com”。</h5> <h5 id="现在存在两个域名aaa-xxx-com和bbb-xxx-com。在aaa下嵌入bbb的页面-由于其document-name不一致-无法在aaa下操作bbb的js。可以在aaa和bbb下通过js将document-name-xxx-com-设置一致-来达到互相访问的作用。"><a href="#现在存在两个域名aaa-xxx-com和bbb-xxx-com。在aaa下嵌入bbb的页面-由于其document-name不一致-无法在aaa下操作bbb的js。可以在aaa和bbb下通过js将document-name-xxx-com-设置一致-来达到互相访问的作用。" class="header-anchor">#</a> 现在存在两个域名aaa.xxx.com和bbb.xxx.com。在aaa下嵌入bbb的页面，由于其<code>document.name</code>不一致，无法在aaa下操作bbb的js。可以在aaa和bbb下通过js将<code>document.name = 'xxx.com';</code>设置一致，来达到互相访问的作用。</h5> <h5 id="一级域名-有的人叫根域名-如-sojson-com、baidu-com、sina-com、sina-com-cn、sina-cn-net-等等。"><a href="#一级域名-有的人叫根域名-如-sojson-com、baidu-com、sina-com、sina-com-cn、sina-cn-net-等等。" class="header-anchor">#</a> <a href="http://www.sojson.com/tag_yjym.html" target="_blank" rel="noopener noreferrer">一级域名  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>有的人叫根域名，如：sojson.com、baidu.com、sina.com、sina.com.cn、sina.cn.net 等等。</h5> <h5 id="二级域名-是指增加了一级-包括www。如-www-sojson-com、icp-sojson-com、zhidao-baidu-com、www-baidu-com-等等。有人把www-sojson-com叫一级域名这是错误的。"><a href="#二级域名-是指增加了一级-包括www。如-www-sojson-com、icp-sojson-com、zhidao-baidu-com、www-baidu-com-等等。有人把www-sojson-com叫一级域名这是错误的。" class="header-anchor">#</a> <a href="http://www.sojson.com/tag_ejym.html" target="_blank" rel="noopener noreferrer">二级域名  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>是指增加了一级，包括www。如：<code>www.sojson.com、icp.sojson.com、zhidao.baidu.com、www.baidu.com</code>  等等。有人把www.sojson.com叫一级域名这是错误的。</h5> <h4 id="_7-websocket-允许服务器端与客户端进行全双工-full-duplex-的通信"><a href="#_7-websocket-允许服务器端与客户端进行全双工-full-duplex-的通信" class="header-anchor">#</a> 7.websocket:允许服务器端与客户端进行全双工（full-duplex）的通信</h4> <h5 id="为什么还需要websocket协议"><a href="#为什么还需要websocket协议" class="header-anchor">#</a> 为什么还需要websocket协议？</h5> <p>==http协议只能是客户端向服务器发送请求，而做不到服务器主动向客户端推送信息==</p> <ol><li>建立连接和断开连接、发送数据和接收数据、处理错误。</li> <li>WebSocket实例对象有一个readyState属性，表示目前的状态，可取4个值：
+【0：正在连接；1：连接成功；2：正在关闭；3：连接关闭】</li> <li>客户端建立WebSocket流程：
+（0）检测浏览器是否支持WebSocket
+（1）握手协议成功以后，readyState就从0变为1，并触发open事件
+（2）关闭WebSocket连接，会触发close事件
+（3）客户端收到服务器发送的数据，会触发message事件
+（4）连接建立后，客户端通过send方法向服务器端发送数据</li></ol> <h4 id="_8-代理"><a href="#_8-代理" class="header-anchor">#</a> 8.代理</h4></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/daily-summary/博客学习/节流与防抖.html" class="prev">
+        节流与防抖
+      </a></span> <span class="next"><a href="/daily-summary/博客学习/重定向 &amp;&amp; 转发.html">
+        重定向 &amp;&amp; 转发
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/daily-summary/assets/js/app.c7a2df99.js" defer></script><script src="/daily-summary/assets/js/2.7bd641e8.js" defer></script><script src="/daily-summary/assets/js/47.70a754d7.js" defer></script>
+  </body>
+</html>
