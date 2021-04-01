@@ -43,13 +43,12 @@ jobs:
         run: yarn docs:build
 
       # 查看 workflow 的文档来获取更多信息
-      # @see https://github.com/crazy-max/ghaction-github-pages
+      # @see https://github.com/marketplace/actions/deploy-to-github-pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
+          ACCESS_TOKEN: ${{ secrets.ACTION_SECRETS }}
           # 部署到 gh-pages 分支
-          target_branch: master
+          BRANCH: master
           # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTION_SECRETS }}
+          FOLDER: docs/.vuepress/dist         
