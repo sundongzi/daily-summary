@@ -1,0 +1,5 @@
+<template><h5 id="_1-v-if指的是-真正的-条件渲染-因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建"><a class="header-anchor" href="#_1-v-if指的是-真正的-条件渲染-因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建">#</a> 1.v-if指的是‘真正的’条件渲染，,因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建.</h5>
+<h5 id="_2-v-if-也是惰性的-如果在初始渲染时条件为假-那么什么都不做-直到条件第一次为真的时候才会开始渲染条件块"><a class="header-anchor" href="#_2-v-if-也是惰性的-如果在初始渲染时条件为假-那么什么都不做-直到条件第一次为真的时候才会开始渲染条件块">#</a> 2.v-if 也是惰性的,==如果在初始渲染时条件为假,那么什么都不做== - - 直到条件第一次为真的时候才会开始渲染条件块</h5>
+<h5 id="v-show就简单得多-不管初始条件是什么-元素总会被渲染-并且只是简单的基于css进行切换"><a class="header-anchor" href="#v-show就简单得多-不管初始条件是什么-元素总会被渲染-并且只是简单的基于css进行切换">#</a> v-show就简单得多- - 不管初始条件是什么,==元素总会被渲染,并且只是简单的基于css进行切换.==</h5>
+<h5 id="参考链接-https-blog-csdn-net-jian-xi-article-details-68486836"><a class="header-anchor" href="#参考链接-https-blog-csdn-net-jian-xi-article-details-68486836">#</a> 参考链接：https://blog.csdn.net/jian_xi/article/details/68486836</h5>
+</template>
