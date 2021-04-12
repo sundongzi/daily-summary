@@ -2,7 +2,7 @@
 home: true
 tagline: Web前端技术总结，放弃是最容易做出的决定，而坚持无论在哪儿都是最难的选择。
 actionText: 马上进入
-actionLink: /book/关于回调的一些理解.md
+actionLink: /前端/
 # actions:
 # - link: /book/关于回调的一些理解.md
 #   text: 马上进入
