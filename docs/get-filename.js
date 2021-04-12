@@ -1,16 +1,17 @@
 const fs = require('fs')
 const path = require('path')
 const _path = path.dirname(__dirname)
-console.log('path', )
-const dir = `${_path}/docs/项目积累`
-// console.log('111111', fs.readdir(dir))
+let _name = '更多'
+const dir = `${_path}/docs/${_name}`
 const files = fs.readdirSync(dir)
-// console.log('files', files)
 let arr = []
 for(let file of files) {
-    let newArr = []
-    newArr.push(file)
-    newArr.push(file)
-    arr.push(newArr)
+    if (file !== 'README.md') {
+        let _file = file.replace(/.md$/g, '')
+        let newArr = []
+        newArr.push(`${_name}/${_file}`)
+        newArr.push(_file)
+        arr.push(newArr)
+    }
 }
 console.log(arr)
