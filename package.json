@@ -6,6 +6,7 @@
   "repository": "https://github.com/sundongzi/daily-summary.git",
   "author": "sundong <sundong@idss-cn.com>",
   "license": "MIT",
+  "homepage": "https://sundongzi.github.io/daily-summary/",
   "scripts": {
     "docs:dev": "vuepress dev docs --temp .temp",
     "docs:build": "vuepress build docs --no-cache",
